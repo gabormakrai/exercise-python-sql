@@ -20,7 +20,34 @@ You will be asked to demonstrate the solution, including:
 - how you did (or would) ensure data quality
 - what would need to change for the solution scale to work with a 10TB dataset with new data arriving each day
 
-## Your Writeup!
+## My Solution
 
-Please include any instructions, answers and details of any import decisions you made here for the reviewer.
+### Main
+
+I completely rewrote `main.py` to have a user-friendly command line interface. I am using `argparse` ([link](https://docs.python.org/3/library/argparse.html))  to parse command
+line arguments.
+
+For usage:
+```
+main.py -h
+```
+
+This will give the following output
+```
+usage: main.py [-h] --posts-file POSTS_FILE --tags-file TAGS_FILE
+               --output-db-file OUTPUT_DB_FILE
+               [--delete-output-db-file-if-exists]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --posts-file POSTS_FILE
+                        File that contains the Posts xml data
+  --tags-file TAGS_FILE
+                        File that contains the Tags xml data
+  --output-db-file OUTPUT_DB_FILE
+                        Sqlite db file to write the data
+  --delete-output-db-file-if-exists
+                        Delete the output db file if it exists
+```
+
 
