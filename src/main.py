@@ -5,11 +5,11 @@ import logging
 
 from sqlalchemy.orm import Session
 
-from src.db import create_sqlalchemy_engine, create_tags_and_posts_table
-from src.post import Post
-from src.tag import Tag
-from src.utils import delete_file_if_exists, file_exists
-from src.xml_reader import read_xml_file_and_call_method
+from db import create_sqlalchemy_engine, create_tags_and_posts_table
+from post import Post
+from tag import Tag
+from utils import delete_file_if_exists, file_exists
+from xml_reader import read_xml_file_and_call_method
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 LOGGER = logging.getLogger(__name__)

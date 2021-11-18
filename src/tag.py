@@ -2,7 +2,7 @@
 from sqlalchemy import Column, Integer, Table, Text
 from sqlalchemy.ext.declarative import declarative_base
 
-from src.utils import get_element_or_none
+from utils import get_element_or_none
 
 Base = declarative_base()
 

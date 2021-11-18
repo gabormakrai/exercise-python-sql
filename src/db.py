@@ -1,13 +1,15 @@
 from sqlalchemy import MetaData, create_engine
 
-from src.post import Post
-from src.tag import Tag
+from post import Post
+from tag import Tag
 
 
-def create_tags_and_posts_table(engine):
+def create_tags_and_posts_table(engine, create_tag_table=True, create_post_table=True):
     metadata_obj = MetaData()
-    Tag.create_table(metadata_obj)
-    Post.create_table(metadata_obj)
+    if create_tag_table:
+        Tag.create_table(metadata_obj)
+    if create_post_table:
+        Post.create_table(metadata_obj)
     metadata_obj.create_all(engine)
 
 
