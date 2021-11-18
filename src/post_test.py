@@ -32,7 +32,8 @@ def test_insert_with_sqlalchemy():
 
     connection = sqlalchemy_engine.raw_connection()
     cursor = connection.cursor()
-    assert list(cursor.execute('select * from post')) == [(1, 2, 3, 'date1', 4, 5, 'body1', 6, 7, 'date2', 'date3', 'title1', 'tags1', 8, 9, 10, 'license1')]
+    assert list(cursor.execute('select * from post')) == [
+        (1, 2, 3, 'date1', 4, 5, 'body1', 6, 7, 'date2', 'date3', 'title1', 'tags1', 8, 9, 10, 'license1')]
 
 
 def test_post_creation_happy_path():

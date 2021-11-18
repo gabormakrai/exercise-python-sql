@@ -11,7 +11,8 @@ from tag import Tag
 from utils import delete_file_if_exists, file_exists
 from xml_reader import read_xml_file_and_call_method
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s:%(levelname)s:%(name)s:%(message)s')
 LOGGER = logging.getLogger(__name__)
 
 
@@ -27,7 +28,8 @@ def stream_data_to_sqlite_db(posts_file_path, tags_file_path, output_db_file_pat
         delete_file_if_exists(output_db_file_path)
 
     if file_exists(output_db_file_path):
-        LOGGER.error("Output db file exists, please run with --delete-output-db-file-if-exists or delete the file")
+        LOGGER.error(
+            "Output db file exists, please run with --delete-output-db-file-if-exists or delete the file")
         return
 
     LOGGER.info("Creating database")
@@ -65,9 +67,12 @@ def stream_data_to_sqlite_db(posts_file_path, tags_file_path, output_db_file_pat
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--posts-file', required=True, help='File that contains the Posts xml data')
-    parser.add_argument('--tags-file', required=True, help='File that contains the Tags xml data')
-    parser.add_argument('--output-db-file', required=True, help='Sqlite db file to write the data')
+    parser.add_argument('--posts-file', required=True,
+                        help='File that contains the Posts xml data')
+    parser.add_argument('--tags-file', required=True,
+                        help='File that contains the Tags xml data')
+    parser.add_argument('--output-db-file', required=True,
+                        help='Sqlite db file to write the data')
     parser.add_argument(
         '--delete-output-db-file-if-exists',
         action='store_true',

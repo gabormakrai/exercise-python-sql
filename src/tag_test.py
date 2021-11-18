@@ -8,7 +8,8 @@ from test_helper import MockXmlData
 def test_insert_with_sqlalchemy():
     sqlalchemy_engine = create_sqlalchemy_engine("")
     create_tags_and_posts_table(sqlalchemy_engine, create_post_table=False)
-    example_tag = Tag(id=1, tag_name='value1', count=None, excerpt_post_id=5, wiki_post_id=111)
+    example_tag = Tag(id=1, tag_name='value1', count=None,
+                      excerpt_post_id=5, wiki_post_id=111)
     with Session(sqlalchemy_engine) as session:
         session.add(example_tag)
         session.commit()
