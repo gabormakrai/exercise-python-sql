@@ -15,4 +15,3 @@ def create_tags_and_posts_table(engine, create_tag_table=True, create_post_table
 
 def create_sqlalchemy_engine(file_path):
     return create_engine(f"sqlite+pysqlite:///{file_path}", future=True)
-

@@ -25,8 +25,7 @@ def test_insert_with_sqlalchemy():
         answer_count=8,
         comment_count=9,
         favorite_count=10,
-        content_license='license1'
-        )
+        content_license='license1')
     with Session(sqlalchemy_engine) as session:
         session.add(example_post)
         session.commit()

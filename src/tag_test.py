@@ -49,9 +49,9 @@ def test_tag_creation_one_field_missing():
 
 def test_tag_creation_one_field_is_incorrect():
     value = Tag.create_from_xml_element_data(MockXmlData({
-            'Id': '1',
-            'TagName': 'value1',
-            'ExcerptPostId': 'not_a_number',
-            'WikiPostId': '5'
+        'Id': '1',
+        'TagName': 'value1',
+        'ExcerptPostId': 'not_a_number',
+        'WikiPostId': '5'
     }))
     assert not value
