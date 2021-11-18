@@ -29,7 +29,7 @@ line arguments.
 
 For usage:
 ```
-main.py -h
+python3 main.py -h
 ```
 
 This will give the following output
@@ -50,4 +50,16 @@ optional arguments:
                         Delete the output db file if it exists
 ```
 
+### SqlAlchemy
 
+The solution is using SQLAlchemy ([link](https://www.sqlalchemy.org/)) for database operations. The application will create the tables and create the insert calls via SQLAlchemy safely, so I don't need to worry about sql injection problems.
+
+### Data quality
+
+There are simple checks for the Tag and Post entries. Id/counters/numbers are checked whether they can be converted into `int`. There are no checks on dates (that is one possible improvement).
+
+### Possible improvements / next steps
+
+This solution doesn't create nicely indexed / partitioned tables. Indexing is certainly possible in Sqlite which could help the analysts to run their queries faster. Partitioning is not possible in Sqlite, but would be beneficial for other database technologies to speed up the queries for the analysts.  
+
+Also, testing can be further improved by parametrized tests. (Additionally, moving out the test python files to a separate directory would be nice to avoid having one large directory)
