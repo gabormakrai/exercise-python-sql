@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 
 from db import create_sqlalchemy_engine, create_tags_and_posts_table
-from test_helper import MockXmlData
 from tag import Tag
+from test_helper import MockXmlData
 
 
 def test_insert_with_sqlalchemy():
